@@ -7,6 +7,7 @@
 #include <stdexcept>
 #include <list>
 #include <cmath>
+#include <map>
 
 struct FileData {
     std::vector<std::string> lines;
@@ -63,6 +64,8 @@ int main() {
         }
     }
 
+    //PART 1
+    /*
     //sort before calculating the distances
     left.sort();
     right.sort();
@@ -77,6 +80,39 @@ int main() {
         ++rightIT;
     }
     fmt::print("\t total distance = {}\n", total);
+    */
 
+
+    //PART 2
+    int total = 0;
+    std::map<int,int> resultsMap;//key:left list element,value: key * n times on right list
+
+    auto leftIT = left.begin();
+
+    while (leftIT != left.end()) {
+        int left_value = *leftIT;
+        int amount_times = 0;
+        //checks if key exists on map
+        if (!resultsMap.contains(left_value)) {
+            // if not, calculate amount from rightList and add to resultmap
+            auto rightIT = right.begin();
+            while (rightIT != right.end()) {
+                int right_value = *rightIT;
+                if (right_value == left_value) {
+                    amount_times++;
+                }
+                ++rightIT;
+            }
+            int c = left_value * amount_times;
+            resultsMap[left_value] = c; //add to map
+            total += c;
+        } else {
+            // if does, return total from map and iterate
+            total += resultsMap[left_value];
+        }
+        ++leftIT;
+    }
+
+    fmt::print("\n\t total {}\n", total);
     return 0;
 }
