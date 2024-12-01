@@ -40,7 +40,7 @@ FileData ReadFromFile(const std::string& filename) {
 
 int main() {
     fmt::print("AOC2024 - Problema 1 part 1\n");
-    FileData data = ReadFromFile("samples/one_sample.txt");
+    FileData data = ReadFromFile("samples/one.txt");
 
     fmt::print("load right and left list\n");
     std::list<int> right;
