@@ -8,7 +8,17 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(fmt CONFIG REQUIRED)
 
-add_executable(aoc2024 src/main.cpp)
-target_include_directories(aoc2024 PRIVATE ${CMAKE_SOURCE_DIR}/src)
+# Define source files
+set(SOURCES
+    src/main.cpp
+    src/day01/day01.cpp
+)
+
+add_executable(aoc2024 ${SOURCES})
+
+target_include_directories(aoc2024 PRIVATE 
+                    ${CMAKE_SOURCE_DIR}/src 
+                    ${CMAKE_SOURCE_DIR}/src/day01
+)
 
 target_link_libraries(aoc2024 PRIVATE fmt::fmt)
