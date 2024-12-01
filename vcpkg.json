@@ -1,0 +1,4 @@
+{
+    "name": "aoc2024",
+    "dependencies": [ "fmt" ]
+}
