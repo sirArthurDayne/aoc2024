@@ -4,7 +4,7 @@
 #include <fmt/core.h>
 
 int main() {
-    /*fmt::print("AOC2024 - Day1\n");*/
+    /*fmt::print("aoc2024 - day1\n");*/
     /*Day01::SolvePart1();*/
     /*Day01::SolvePart2();*/
 
