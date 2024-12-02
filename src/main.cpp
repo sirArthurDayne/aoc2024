@@ -1,5 +1,6 @@
 #include "day01.h"
 #include "day02.h"
+
 #include <fmt/core.h>
 
 int main() {

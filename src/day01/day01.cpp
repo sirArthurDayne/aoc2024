@@ -6,6 +6,7 @@
 #include <cmath>
 #include <map>
 
+using namespace Utils;
 namespace Day01 {
     void SolvePart1() {
 

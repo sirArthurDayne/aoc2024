@@ -11,6 +11,7 @@ find_package(fmt CONFIG REQUIRED)
 # Define source files
 set(SOURCES
     src/main.cpp
+    src/utils/utils.cpp
     src/day01/day01.cpp
     src/day02/day02.cpp
 )
@@ -19,6 +20,7 @@ add_executable(aoc2024 ${SOURCES})
 
 target_include_directories(aoc2024 PRIVATE 
                     ${CMAKE_SOURCE_DIR}/src 
+                    ${CMAKE_SOURCE_DIR}/src/utils
                     ${CMAKE_SOURCE_DIR}/src/day01
                     ${CMAKE_SOURCE_DIR}/src/day02
 )
