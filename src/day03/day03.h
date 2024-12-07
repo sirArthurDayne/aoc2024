@@ -1,6 +1,6 @@
 #pragma once
 
-namespace Day02 {
+namespace Day03 {
     void SolvePart1();
     void SolvePart2();
 }

@@ -57,9 +57,9 @@ namespace Day02 {
 
     void SolvePart1() {
         
-        FileData data = ReadFromFile("samples/two.txt");
+        FileData data = ReadFromFile("samples/two_sample.txt");
         if (!data.words.empty()) {
-            fmt::print("total reports: {}\n",data.words.size());
+            /*fmt::print("total reports: {}\n",data.words.size());*/
             int safe_count = 0;
             for (int n = 0; n < data.words.size(); n++) {
                 //checking monotonic and diff is range
@@ -68,14 +68,14 @@ namespace Day02 {
                     safe_count++;
                 }
             }
-            fmt::print("\n\t total SAFE reports:{} \n", safe_count);
+            fmt::print("\t P1-total SAFE reports:{} \n", safe_count);
         }
     }
 
     void SolvePart2() {
-        FileData data = ReadFromFile("samples/two.txt");
+        FileData data = ReadFromFile("samples/two_sample.txt");
         if (!data.words.empty()) {
-            fmt::print("total reports: {}\n",data.words.size());
+            /*fmt::print("total reports: {}\n",data.words.size());*/
             int safe_count = 0;
             for (int n = 0; n < data.words.size(); n++) {
                 if (isSafe(data.words[n])) {
@@ -88,7 +88,7 @@ namespace Day02 {
                     safe_count++;
                 }
             }
-            fmt::print("\n\t total SAFE reports:{} \n", safe_count);
+            fmt::print("\t P2-total SAFE reports:{} \n", safe_count);
         }
     }
 
