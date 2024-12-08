@@ -17,5 +17,7 @@ int main() {
     Day03::SolvePart1();
     Day03::SolvePart2();
 
+    //188116424
+    //104245808
     return 0;
 }
