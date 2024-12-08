@@ -3,6 +3,7 @@
 #include "day03.h"
 #include "day04.h"
 #include "day05.h"
+#include "day06.h"
 
 #include <fmt/core.h>
 
@@ -23,9 +24,13 @@ int main() {
     //Day04::SolvePart1();
     //Day04::SolvePart2();
     
-    fmt::print("AOC2024 - Day5\n");
-    Day05::SolvePart1();
-    Day05::SolvePart2();
+    /*fmt::print("AOC2024 - Day5\n");*/
+    /*Day05::SolvePart1();*/
+    /*Day05::SolvePart2();*/
+
+    fmt::print("AOC2024 - Day6\n");
+    Day06::SolvePart1();
+    Day06::SolvePart2();
 
     return 0;
 }

@@ -17,6 +17,7 @@ set(SOURCES
     src/day03/day03.cpp
     src/day04/day04.cpp
     src/day05/day05.cpp
+    src/day06/day06.cpp
 )
 
 add_executable(aoc2024 ${SOURCES})
@@ -29,6 +30,7 @@ target_include_directories(aoc2024 PRIVATE
                     ${CMAKE_SOURCE_DIR}/src/day03
                     ${CMAKE_SOURCE_DIR}/src/day04
                     ${CMAKE_SOURCE_DIR}/src/day05
+                    ${CMAKE_SOURCE_DIR}/src/day06
 )
 
 target_link_libraries(aoc2024 PRIVATE fmt::fmt)
