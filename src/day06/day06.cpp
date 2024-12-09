@@ -174,30 +174,31 @@ namespace Day06 {
             Soldier soldier = FindSoldierOnMap(data.lines, '^');
             int limitW = static_cast<int>(data.lines[0].size());
             int limitC = static_cast<int>(data.lines.size());
-            for (int w = 0; w < limitW; ++w) {
-                for(int c = 0; c < limitC; ++c) {
-                    if (data.lines[w][c] != '.') continue;
-                    char temp = data.lines[w][c];
-                    data.lines[w][c] = '#';
+            //Brutforce - Not optimized
 
-                    if (isLoops(data.lines, soldier.x,soldier.y, TOP)) {
-                        validPos++;
-                    }
-                    data.lines[w][c] = temp;
-
-                }
-            }
-            //improvements version
-            /*for (auto pos : soldierVisitedPositions) {*/
-            /*    if (data.lines[pos.first][pos.second] != '.') continue;*/
-            /*    char temp = data.lines[pos.first][pos.second];*/
-            /*    data.lines[pos.first][pos.second] = '#';*/
-            /*    if (isLoops(data.lines, pos.first,pos.second, TOP)) {*/
-            /*        validPos++;*/
+            /*for (int w = 0; w < limitW; ++w) {*/
+            /*    for(int c = 0; c < limitC; ++c) {*/
+            /*        if (data.lines[w][c] != '.') continue;*/
+            /*        char temp = data.lines[w][c];*/
+            /*        data.lines[w][c] = '#';*/
+            /**/
+            /*        if (isLoops(data.lines, soldier.x,soldier.y, TOP)) {*/
+            /*            validPos++;*/
+            /*        }*/
+            /*        data.lines[w][c] = temp;*/
+            /**/
             /*    }*/
-            /*    data.lines[pos.first][pos.second] = temp;*/
             /*}*/
-            fmt::print("LOOP:{}\n", validPos);
+            //improvements version - Only add obstacle to position that soldier can be
+            for (auto pos : soldierVisitedPositions) {
+                char temp = data.lines[pos.first][pos.second];
+                data.lines[pos.first][pos.second] = '#';
+                if (isLoops(data.lines, soldier.x,soldier.y, TOP)) {
+                    validPos++;
+                }
+                data.lines[pos.first][pos.second] = temp;
+            }
+            fmt::print("\tLOOP:{}\n", validPos);
         }
     }
 }
